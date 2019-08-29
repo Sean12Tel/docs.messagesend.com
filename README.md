@@ -42,3 +42,44 @@ if ($err) {
   echo $response;
 }
 ```
+
+Python
+```python
+import requests
+
+url = "http://sms.rout2.com/hlr/api.php"
+
+querystring = {"msisdn":"MSISDN","key":"KEY"}
+
+headers = {"Cache-Control": "no-cache"}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
+```
+
+NodeJS
+```node
+var request = require("request");
+
+var options = { method: 'GET',
+  url: 'http://sms.rout2.com/hlr/api.php',
+  qs: { msisdn: 'MSISDN', key: 'KEY' },
+  headers: { 'Cache-Control': 'no-cache' } };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+```
+
+C#
+```c#
+var client = new RestClient("http://sms.rout2.com/hlr/api.php?msisdn=MSISDN&key=KEY");
+var request = new RestRequest(Method.GET);
+request.AddHeader("Cache-Control", "no-cache");
+IRestResponse response = client.Execute(request);
+```
+
+
