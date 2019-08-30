@@ -1,6 +1,8 @@
 site_name: docs.messagesend.com
 nav:
     - Home: index.md
+    - Code Examples: examples.md
+    - Error Codes: errorCodes.md
     - About: about.md
 theme:
   name: 'material'

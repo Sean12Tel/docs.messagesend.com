@@ -1,85 +1,33 @@
-## Docs messagesend.com
+# Home
 
-Example Usage
+## HLR Rest API
 
-HTTP GET
-```
-http://sms.rout2.com/hlr/api.php?msisdn=MSISDN&key=KEY
-```
 
-cURL
-```bash
-$ curl "http://sms.rout2.com/hlr/api.php?msisdn=MSISDN&key=KEY" 
-```
+### Query String Values
 
-PHP
-```php
-<?php
+| Name | Value |
+|------|------------|
+| MSISDN | The mobile number you wish to query. It should be written as E.164 format but without the + symbol. eg. Country code +44, with mobile number 07700 900123 should be written as 44700900123 |
+| KEY | Your API Key |
 
-$curl = curl_init();
 
-curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://sms.rout2.com/hlr/api.php?msisdn=MSISDN&key=KEY",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_HTTPHEADER => array(
-    "Cache-Control: no-cache",
-  ),
-));
+### Example HTTP GET
 
-$response = curl_exec($curl);
-$err = curl_error($curl);
+<pre><code lang="">http://sms.rout2.com/hlr/api.php?msisdn=<b>MSISDN</b>&key=<b>KEY</b></code></pre>
 
-curl_close($curl);
+### Response
 
-if ($err) {
-  echo "cURL Error #:" . $err;
-} else {
-  echo $response;
+``` json
+{
+  "result":{
+    "msisdn":"447700900123",
+    "imsi":"447700",
+    "mcc":0,
+    "mnc":0,
+    "networkname":"T-mobile",
+    "balance":"99.862",
+    "errorCode":0
+  }
 }
 ```
-
-Python
-```python
-import requests
-
-url = "http://sms.rout2.com/hlr/api.php"
-
-querystring = {"msisdn":"MSISDN","key":"KEY"}
-
-headers = {"Cache-Control": "no-cache"}
-
-response = requests.request("GET", url, headers=headers, params=querystring)
-
-print(response.text)
-```
-
-NodeJS
-```node
-var request = require("request");
-
-var options = { method: 'GET',
-  url: 'http://sms.rout2.com/hlr/api.php',
-  qs: { msisdn: 'MSISDN', key: 'KEY' },
-  headers: { 'Cache-Control': 'no-cache' } };
-
-request(options, function (error, response, body) {
-  if (error) throw new Error(error);
-
-  console.log(body);
-});
-```
-
-C#
-```c#
-var client = new RestClient("http://sms.rout2.com/hlr/api.php?msisdn=MSISDN&key=KEY");
-var request = new RestRequest(Method.GET);
-request.AddHeader("Cache-Control", "no-cache");
-IRestResponse response = client.Execute(request);
-```
-
 
