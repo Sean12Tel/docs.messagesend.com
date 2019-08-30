@@ -75,7 +75,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#docs-messagesendcom" tabindex="1" class="md-skip">
+      <a href="#home" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -175,6 +175,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Home
@@ -188,14 +190,43 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docs-messagesendcom" class="md-nav__link">
-    Docs messagesend.com
+  <a href="#hlr-rest-api" class="md-nav__link">
+    HLR Rest API
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#query-string-values" class="md-nav__link">
+    Query String Values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-http-get" class="md-nav__link">
+    Example HTTP GET
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -207,6 +238,30 @@
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="examples/" title="Code Examples" class="md-nav__link">
+      Code Examples
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="errorCodes/" title="Error Codes" class="md-nav__link">
+      Error Codes
+    </a>
   </li>
 
     
@@ -236,14 +291,43 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docs-messagesendcom" class="md-nav__link">
-    Docs messagesend.com
+  <a href="#hlr-rest-api" class="md-nav__link">
+    HLR Rest API
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#query-string-values" class="md-nav__link">
+    Query String Values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-http-get" class="md-nav__link">
+    Example HTTP GET
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -264,87 +348,42 @@
               
                 
                 
-                  <h1>Home</h1>
-                
-                <h2 id="docs-messagesendcom">Docs messagesend.com</h2>
-<p>Example Usage</p>
-<p>HTTP GET</p>
-<div class="codehilite"><pre><span></span>http://sms.rout2.com/hlr/api.php?msisdn=MSISDN&amp;key=KEY
-</pre></div>
+                <h1 id="home">Home</h1>
+<h2 id="hlr-rest-api">HLR Rest API</h2>
+<h3 id="query-string-values">Query String Values</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSISDN</td>
+<td>The mobile number you wish to query. It should be written as E.164 format but without the + symbol. eg. Country code +44, with mobile number 07700 900123 should be written as 44700900123</td>
+</tr>
+<tr>
+<td>KEY</td>
+<td>Your API Key</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-http-get">Example HTTP GET</h3>
+<pre><code lang="">http://sms.rout2.com/hlr/api.php?msisdn=<b>MSISDN</b>&key=<b>KEY</b></code></pre>
 
-
-<p>cURL</p>
-<div class="codehilite"><pre><span></span>$ curl <span class="s2">&quot;http://sms.rout2.com/hlr/api.php?msisdn=MSISDN&amp;key=KEY&quot;</span> 
-</pre></div>
-
-
-<p>PHP</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
-
-<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">&quot;http://sms.rout2.com/hlr/api.php?msisdn=MSISDN&amp;key=KEY&quot;</span><span class="p">,</span>
-  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
-  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
-  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
-  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
-  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s2">&quot;Cache-Control: no-cache&quot;</span><span class="p">,</span>
-  <span class="p">),</span>
-<span class="p">));</span>
-
-<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
-<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
-
-<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">echo</span> <span class="s2">&quot;cURL Error #:&quot;</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<h3 id="response">Response</h3>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;result&quot;</span><span class="p">:{</span>
+    <span class="nt">&quot;msisdn&quot;</span><span class="p">:</span><span class="s2">&quot;447700900123&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;imsi&quot;</span><span class="p">:</span><span class="s2">&quot;23415&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;mcc&quot;</span><span class="p">:</span><span class="mi">234</span><span class="p">,</span>
+    <span class="nt">&quot;mnc&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span>
+    <span class="nt">&quot;networkname&quot;</span><span class="p">:</span><span class="s2">&quot;T-mobile&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;balance&quot;</span><span class="p">:</span><span class="s2">&quot;99.862&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;errorCode&quot;</span><span class="p">:</span><span class="mi">0</span>
+  <span class="p">}</span>
 <span class="p">}</span>
-</pre></div>
-
-
-<p>Python</p>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://sms.rout2.com/hlr/api.php&quot;</span>
-
-<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;msisdn&quot;</span><span class="p">:</span><span class="s2">&quot;MSISDN&quot;</span><span class="p">,</span><span class="s2">&quot;key&quot;</span><span class="p">:</span><span class="s2">&quot;KEY&quot;</span><span class="p">}</span>
-
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Cache-Control&quot;</span><span class="p">:</span> <span class="s2">&quot;no-cache&quot;</span><span class="p">}</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-</pre></div>
-
-
-<p>NodeJS</p>
-<div class="codehilite"><pre><span></span>var request = require(&quot;request&quot;);
-
-var options = { method: &#39;GET&#39;,
-  url: &#39;http://sms.rout2.com/hlr/api.php&#39;,
-  qs: { msisdn: &#39;MSISDN&#39;, key: &#39;KEY&#39; },
-  headers: { &#39;Cache-Control&#39;: &#39;no-cache&#39; } };
-
-request(options, function (error, response, body) {
-  if (error) throw new Error(error);
-
-  console.log(body);
-});
-</pre></div>
-
-
-<p>C#</p>
-<div class="codehilite"><pre><span></span><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RestClient</span><span class="p">(</span><span class="s">&quot;http://sms.rout2.com/hlr/api.php?msisdn=MSISDN&amp;key=KEY&quot;</span><span class="p">);</span>
-<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="n">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="n">AddHeader</span><span class="p">(</span><span class="s">&quot;Cache-Control&quot;</span><span class="p">,</span> <span class="s">&quot;no-cache&quot;</span><span class="p">);</span>
-<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
 </pre></div>
                 
                   
@@ -367,13 +406,13 @@ request(options, function (error, response, body) {
       <nav class="md-footer-nav__inner md-grid">
         
         
-          <a href="about/" title="About" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="examples/" title="Code Examples" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                About
+                Code Examples
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

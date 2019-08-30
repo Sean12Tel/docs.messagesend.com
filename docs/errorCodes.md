@@ -8,7 +8,7 @@
 |2|Not Enough Balance|
 |3|MSISDN Not Valid|
 |4|HLR Lookup not configured for prefix|
-|5|Uknown Network Error|
+|5|Unknown Network Error|
 |6|Network Error. Check Error Description for more info|
 |7|API Data Mismatch Error|
 
